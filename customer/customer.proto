@@ -1,0 +1,15 @@
+syntax ="proto3";
+option go_package="github.com/kiran-blockchain/netxd-go-advanced/grpc-demo/helloword";
+package customer;
+service CustomerService{rpc AddAccount (CustomerDetails) returns (FetchDetails);
+}
+message CustomerDetails{    
+    string name=1;
+    string accID=2;
+    int32 balance=3;
+    int32 bankID=4;
+
+}
+message FetchDetails{ 
+    repeated CustomerDetails customer=1;
+    }

@@ -1,0 +1,26 @@
+syntax ="proto3";
+option go_package="github.com/kiran-blockchain/netxd-go-advanced/grpc-demo2/task";
+package task;
+service TaskService{
+        rpc AddTask (Task) returns (TaskResponse);
+        rpc GetTasks (Empty) returns (TaskList);
+    }
+message Task{
+            string id=1;
+            string Title=2;
+            bool completed=3;
+        }
+message TaskResponse{
+        string id=1;
+    }
+message TaskList {
+        repeated Task tasks=1;
+    }
+message Empty{}
+//insert customer
+//customer(cus_name,acc_id,balance,bank_id)
+//acc_id auto generated//package there for autogeneration
+//get customer details
+//response field will have all the data what we inserted
+//rtc methods
+//acc id need to be ordered in mongodb
